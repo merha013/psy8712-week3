@@ -13,6 +13,6 @@ clean_df$timeSpent <- difftime(time1 = clean_df$timeEnd, time2 = clean_df$timeSt
 hist(as.numeric(clean_df$timeSpent), main = "Histogram of Time Spent", xlab = "Time Spent (in seconds)")
 frequency_tables_list <- lapply(clean_df[,5:14], table)
 lapply(frequency_tables_list, barplot) 
-nrow(subset(clean_df, ((clean_df$q1>=clean_df$q2) & (clean_df$q2 != clean_df$q3)))) # when do you use brackets verses ellipses?
-for(i in 1:length(frequency_tables_list)) {
-  barplot(as.vector(frequency_tables_list[i])}
+nrow(subset(clean_df, ((clean_df$q1>=clean_df$q2) & (clean_df$q2 != clean_df$q3))))
+for (i in length(frequency_tables_list)){
+  barplot(unlist(frequency_tables_list[i]))}
